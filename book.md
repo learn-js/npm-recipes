@@ -5,7 +5,7 @@ I'm excited to share these tutorials with you! The goal of this series of tutori
 
 There are over 50,000 modules on npm, so there's a wildly big number of opportunities for checking out how various npm modules can work together.
 
-I encourage you to help guide the direction of this book! If there are particular modules that you'd like to see covered, please email me at [hi@learnjs.io](mailto:hi@learnjs.io).
+I encourage you to help guide the direction of this book! If there are particular modules that you'd like to see covered, please email me at [hi@learnjs.io](mailto:hi@learnjs.io) or create an issue on the project issue queue on GitHub: [github.com/learn-js/npm-recipes/issues](http://github.com/learn-js/npm-recipes/issues).
 
 This book is highly inspired by the lean publishing model ([read more about it](https://leanpub.com/manifesto)) proposed by Peter Armstrong, founder of leanpub.com. It has proven successful as a way to receive feedback from you, the readers, so that together we can make the best book about javascript tools and libraries possible.
 
