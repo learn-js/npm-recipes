@@ -8,7 +8,7 @@ It was a fairly straightforward and flexible build process, and here I'll outlin
 
 Our example project will be named Pizza, because our example library will do nothing but return the string `'Pizza'`. Deal with it.
 
-This post is part of our **[npm recipes series](/npm-recipes)**, and we'll be looking at the **[browserify](https://github.com/substack/node-browserify)**, **[watchify](https://github.com/substack/watchify)**, and **[uglify-js](https://github.com/mishoo/UglifyJS2)** modules. We'll be exploring how to use these three development tools together to make a simple build process.
+This post is part of our **[npm recipes series](http://learnjs.io/npm-recipes)**, and we'll be looking at the **[browserify](https://github.com/substack/node-browserify)**, **[watchify](https://github.com/substack/watchify)**, and **[uglify-js](https://github.com/mishoo/UglifyJS2)** modules. We'll be exploring how to use these three development tools together to make a simple build process.
 
 ## Create your package.json file
 
@@ -216,4 +216,4 @@ In our case, pizza is a function that returns the string `Pizza`. For you, it mi
 
 Learn more about using npm scripts by taking a look at this article by the author of browserify: [task automation with npm run](http://substack.net/task_automation_with_npm_run).
 
-For an example of running similar tasks for bundling css that's packaged through npm, check out this article: [Using rework-npm for bundling css from npm along with myth and clean-css](http://learnjs.io/blog/2014/01/20/rework-npm-myth-clean-css/)
+For an example of running similar tasks for bundling css that's packaged through npm, check out the next chapter: "Using rework-npm for bundling css from npm along with myth and clean-css"! 
