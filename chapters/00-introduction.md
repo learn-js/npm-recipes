@@ -52,7 +52,7 @@ I encourage you to use git as version control software to track changes as you c
 
 ### GitHub & GitHub Pages
 
-I recommend that put each map you make while reading this book up on GitHub, and if applicable, GitHub Pages. It'll be good practice if you're new to git and GitHub.
+I recommend that you put each project you make while reading this book up on GitHub, and if applicable, GitHub Pages. It'll be good practice if you're new to git and GitHub.
 
 Learn more about GitHub pages in the [related chapter of the Development Environments book](https://github.com/sethvincent/dev-envs-book/blob/master/manuscript/github.md), and on [GitHub's Help section](https://help.github.com/categories/20/articles).
 
