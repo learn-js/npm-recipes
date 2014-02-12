@@ -34,15 +34,11 @@ You'll be using the terminal (or command-line) for many of the tutorials in this
 
 ### Node.js
 
-We'll be using node.js mostly to get at npm, node's bundled package manager.
-
-We will also write modules in the style of node.js.
+We will write Node.js-style modules not only for the server, but also the browser.
 
 Our code written for the browser will utilize the node.js style of modules thanks to browserify, a tool for bundling node modules for the browser.
 
-This means that we won’t cover the RequireJS/AMD toolset for javascript development, but will focus on node/CommonJS modules whenever possible.
-
-You’ll learn more about this later in the book as we go into depth with using Leaflet.js alongside browserify.
+This means that we won’t cover the RequireJS/AMD toolset for javascript development, but will focus on Node/CommonJS modules.
 
 ### npm
 
