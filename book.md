@@ -1650,7 +1650,7 @@ The command `npm start` will get your server running, and you'll be able to acce
 
 Expect this book to continue to be updated over the next year with more tutorials!
 
-Interested in specific modules from npm?
+Interested in specific modules from npm? Email hi@learnjs.io with your suggestions, or create an issue on the project issue queue on GitHub: [github.com/learn-js/npm-recipes/issues](http://github.com/learn-js/npm-recipes/issues).
 
 
 ## More JavaScript books
