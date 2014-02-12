@@ -1,0 +1,45 @@
+#! /usr/bin/env node
+
+var convert = require('ebook-convert');
+
+var epub = convert({
+  source: 'book.md',
+  target: 'dist/learnjs-introduction-to-javascript.epub',
+  arguments: [
+    ['--base-font-size', '10'], 
+    ['--authors', 'Seth Vincent'],
+    ['--extra-css', 'test.css']
+  ]
+});
+
+epub.on('end', function(){
+  console.log('did it!, the epub file exists!')
+});
+
+var mobi = convert({
+  source: 'book.md',
+  target: 'dist/learnjs-introduction-to-javascript.mobi',
+  arguments: [
+    ['--base-font-size', '10'], 
+    ['--authors', 'Seth Vincent'],
+    ['--extra-css', 'test.css']
+  ]
+});
+
+mobi.on('end', function(){
+  console.log('did it!, the mobi file exists!')
+});
+
+var pdf = convert({
+  source: 'book.md',
+  target: 'dist/learnjs-introduction-to-javascript.pdf',
+  arguments: [
+    ['--base-font-size', '10'], 
+    ['--authors', 'Seth Vincent'],
+    ['--extra-css', 'test.css']
+  ]
+});
+
+pdf.on('end', function(){
+  console.log('did it!, the pdf file exists!')
+});

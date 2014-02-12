@@ -1,0 +1,9 @@
+.DS_Store
+notes.md
+releases
+drafts
+leanpub
+old-manuscript
+tmp
+node_modules
+dist/*
