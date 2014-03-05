@@ -1910,6 +1910,9 @@ Learn more at [learnjs.io](http://learnjs.io).
 
 # Changelog
 
+## v0.2.0 – March 4, 2014
+- Add chapter 4: Preloading and rendering image sprites in 2d js/canvas games
+
 ## v0.1.0 - February 11, 2014
 - Add introduction
 - Add chapter 1: creating js library builds with browserify, watchify, and uglify-js
