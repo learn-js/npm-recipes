@@ -2,5 +2,6 @@
 01-creating-js-library-builds-with-browserify-and-other-npm-modules.md
 02-rework-npm-myth-clean-css.md
 03-hyperquest-director-handlebars-example-app.md
+04-gameloop-load-images-sprite-2d.md
 xx-more.md
 xx-changelog.md
