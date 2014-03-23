@@ -5,11 +5,11 @@ var marked = require('marked');
 var convert = require('ebook-convert');
 
 var md = fs.readFileSync('book.md', 'utf8');
-fs.writeFileSync('dist/book.html', marked(md))
+fs.writeFileSync('dist/npm-recipes.html', marked(md))
 
 var epub = convert({
-  source: 'dist/book.html',
-  target: 'dist/learnjs-introduction-to-javascript.epub',
+  source: 'dist/npm-recipes.html',
+  target: 'dist/npm-recipes.epub',
   arguments: [
     ['--cover', 'assets/title_page.jpg'],
     ['--base-font-size', '10'], 
@@ -32,8 +32,8 @@ epub.on('end', function(){
 });
 
 var mobi = convert({
-  source: 'dist/book.html',
-  target: 'dist/learnjs-introduction-to-javascript.mobi',
+  source: 'dist/npm-recipes.html',
+  target: 'dist/npm-recipes.mobi',
   arguments: [
     ['--cover', 'assets/title_page.jpg'],
     ['--base-font-size', '10'], 
@@ -56,8 +56,8 @@ mobi.on('end', function(){
 });
 
 var pdf = convert({
-  source: 'dist/book.html',
-  target: 'dist/learnjs-introduction-to-javascript.pdf',
+  source: 'dist/npm-recipes.html',
+  target: 'dist/npm-recipes.pdf',
   arguments: [
     ['--cover', 'assets/title_page.jpg'],
     ['--base-font-size', '10'], 
