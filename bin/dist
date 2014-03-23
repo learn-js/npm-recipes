@@ -1,14 +1,29 @@
 #! /usr/bin/env node
 
+var fs = require('fs');
+var marked = require('marked');
 var convert = require('ebook-convert');
 
+var md = fs.readFileSync('book.md', 'utf8');
+fs.writeFileSync('dist/book.html', marked(md))
+
 var epub = convert({
-  source: 'book.md',
+  source: 'dist/book.html',
   target: 'dist/learnjs-introduction-to-javascript.epub',
   arguments: [
+    ['--cover', 'assets/title_page.jpg'],
     ['--base-font-size', '10'], 
     ['--authors', 'Seth Vincent'],
-    ['--extra-css', 'test.css']
+    ['--publisher', 'Super Big Tree'],
+    //['--extra-css', 'assets/pdf.css'],
+    //['--pdf-sans-family', 'Open Sans, Helvetica Neue, Helvetica, sans-serif'],
+    //['--pdf-serif-family', 'Lora, Baskerville, Georgia, serif'],
+    ['--page-breaks-before', '//h:h1'],
+    ['--insert-blank-line'],
+    ['--insert-blank-line-size', '1'],
+    ['--line-height', '15'],
+    ['--use-auto-toc'],
+    ['--chapter', '//h:h1']
   ]
 });
 
@@ -17,12 +32,22 @@ epub.on('end', function(){
 });
 
 var mobi = convert({
-  source: 'book.md',
+  source: 'dist/book.html',
   target: 'dist/learnjs-introduction-to-javascript.mobi',
   arguments: [
+    ['--cover', 'assets/title_page.jpg'],
     ['--base-font-size', '10'], 
     ['--authors', 'Seth Vincent'],
-    ['--extra-css', 'test.css']
+    ['--publisher', 'Super Big Tree'],
+    //['--extra-css', 'assets/pdf.css'],
+    //['--pdf-sans-family', 'Open Sans, Helvetica Neue, Helvetica, sans-serif'],
+    //['--pdf-serif-family', 'Lora, Baskerville, Georgia, serif'],
+    ['--page-breaks-before', '//h:h1'],
+    ['--insert-blank-line'],
+    ['--insert-blank-line-size', '1'],
+    ['--line-height', '15'],
+    ['--use-auto-toc'],
+    ['--chapter', '//h:h1']
   ]
 });
 
@@ -31,12 +56,27 @@ mobi.on('end', function(){
 });
 
 var pdf = convert({
-  source: 'book.md',
+  source: 'dist/book.html',
   target: 'dist/learnjs-introduction-to-javascript.pdf',
   arguments: [
+    ['--cover', 'assets/title_page.jpg'],
     ['--base-font-size', '10'], 
     ['--authors', 'Seth Vincent'],
-    ['--extra-css', 'test.css']
+    ['--publisher', 'Super Big Tree'],
+    ['--extra-css', 'assets/pdf.css'],
+    ['--pdf-sans-family', 'Open Sans, Helvetica Neue, Helvetica, sans-serif'],
+    ['--pdf-serif-family', 'Lora, Baskerville, Georgia, serif'],
+    ['--page-breaks-before', '//h:h1'],
+    ['--pdf-page-numbers'],
+    ['--insert-blank-line'],
+    ['--insert-blank-line-size', '1'],
+    ['--line-height', '15'],
+    ['--margin-top', '50'],
+    ['--margin-right', '50'],
+    ['--margin-bottom', '50'],
+    ['--margin-left', '50'],
+    ['--use-auto-toc'],
+    ['--chapter', '//h:h1']
   ]
 });
 

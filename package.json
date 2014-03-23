@@ -10,7 +10,9 @@
     "compile": "./bin/compile",
     "dist": "./bin/dist"
   },
-  "dependencies": {},
+  "dependencies": {
+    "marked": "^0.3.2"
+  },
   "devDependencies": {
     "manuscript-builder": "0.0.3",
     "ebook-convert": "0.0.2"
