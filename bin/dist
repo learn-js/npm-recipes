@@ -71,6 +71,7 @@ var pdf = convert({
     ['--margin-right', '50'],
     ['--margin-bottom', '50'],
     ['--margin-left', '50'],
+    ['--level1-toc', '//h:h1'],
     ['--use-auto-toc'],
     ['--chapter', '//h:h1']
   ]
