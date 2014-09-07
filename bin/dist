@@ -12,7 +12,7 @@ var epub = convert({
   target: 'dist/npm-recipes.epub',
   arguments: [
     ['--cover', 'assets/title_page.jpg'],
-    ['--base-font-size', '10'], 
+    ['--base-font-size', '10'],
     ['--authors', 'Seth Vincent'],
     ['--publisher', 'Super Big Tree'],
     //['--extra-css', 'assets/epub.css'],
@@ -34,7 +34,7 @@ var mobi = convert({
   target: 'dist/npm-recipes.mobi',
   arguments: [
     ['--cover', 'assets/title_page.jpg'],
-    ['--base-font-size', '10'], 
+    ['--base-font-size', '10'],
     ['--authors', 'Seth Vincent'],
     ['--publisher', 'Super Big Tree'],
     //['--extra-css', 'assets/mobi.css'],
@@ -56,7 +56,7 @@ var pdf = convert({
   target: 'dist/npm-recipes.pdf',
   arguments: [
     ['--cover', 'assets/title_page.jpg'],
-    ['--base-font-size', '10'], 
+    ['--base-font-size', '10'],
     ['--authors', 'Seth Vincent'],
     ['--publisher', 'Super Big Tree'],
     ['--extra-css', 'assets/pdf.css'],

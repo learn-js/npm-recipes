@@ -1,9 +1,9 @@
 {
-  "name": "01-introduction",
+  "name": "npm-recipes",
   "description": "first javascript book in the learn.js series",
   "version": "0.0.0",
   "repository": {
-    "url": "git://github.com/sethvincent/01-introduction.git"
+    "url": "git://github.com/learn-js/npm-recipes.git"
   },
   "scripts": {
     "leanpub": "./bin/leanpub",
