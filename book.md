@@ -682,7 +682,7 @@ var http = require('http');
 var director = require('director');
 
 var port = process.env.PORT || 3000;
-var router = 	new director.http.Router();
+var router =   new director.http.Router();
 
 var server = http.createServer(function(req, res){
   router.dispatch(req, res, function(err){
@@ -947,8 +947,8 @@ This line: `{% raw %}{{#block "body"}}{{/block}}{% endraw %}` defines a block th
 
 {{#replace "body"}}
 <div class="container">
-	<h1>{{page.title}}</h1>
-	<div>{{page.content}}</div>
+  <h1>{{page.title}}</h1>
+  <div>{{page.content}}</div>
 </div>
 {{/replace}}
 
@@ -1227,33 +1227,33 @@ var Handlebars = require('handlebars');
 var hbsLayouts = require('handlebars-layouts')(Handlebars);
 
 var wiki = {
-	name: 'Seattle LocalWiki',
-	url: 'http://localwiki.net/seattle',
+  name: 'Seattle LocalWiki',
+  url: 'http://localwiki.net/seattle',
   api: 'http://localwiki.net/api/v4/'
 }
 
 Handlebars.registerPartial('layout', fs.readFileSync('views/layout.html').toString());
 
 var templates = {
-	index: getView('index'),
-	page: getView('page')
+  index: getView('index'),
+  page: getView('page')
 }
 
 var port = process.env.PORT || 3000;
-var router = 	new director.http.Router();
+var router =   new director.http.Router();
 var staticFiles = st({ path: __dirname + '/static', url: '/static', passthrough: true })
 
 var server = http.createServer(function(req, res){
 
-	/*
-	* if the request is for a static file, handle it here
-	*/
-	if (staticFiles(req, res)) return;
+  /*
+  * if the request is for a static file, handle it here
+  */
+  if (staticFiles(req, res)) return;
 
-	/*
-	* otherwise, let the router handle the request
-	*/
-	router.dispatch(req, res, function(err){
+  /*
+  * otherwise, let the router handle the request
+  */
+  router.dispatch(req, res, function(err){
     if (err) {
       res.writeHead(404);
       res.end();
@@ -1262,27 +1262,27 @@ var server = http.createServer(function(req, res){
 });
 
 router.get('/', function(){
-	var html = templates.index({ wiki: wiki });
+  var html = templates.index({ wiki: wiki });
   this.res.writeHead(200, { 'Content-Type': 'text/html' });
-	this.res.end(html);
+  this.res.end(html);
 });
 
 router.get('/:id', function(id){
-	var self = this;
-	var pagesRequest = request(wiki.api + '/pages/?region__slug=seattle&tags=' + id + '&format=json');
+  var self = this;
+  var pagesRequest = request(wiki.api + '/pages/?region__slug=seattle&tags=' + id + '&format=json');
 
-	pagesRequest
-		.pipe(wait(function(err, data){
+  pagesRequest
+    .pipe(wait(function(err, data){
 
-			var html = templates.page({
-				wiki: wiki,
-				tag: id,
-				pages: JSON.parse(data).results
-			});
+      var html = templates.page({
+        wiki: wiki,
+        tag: id,
+        pages: JSON.parse(data).results
+      });
 
-		  self.res.writeHead(200, { 'Content-Type': 'text/html' });
-			self.res.end(html);
-		}));
+      self.res.writeHead(200, { 'Content-Type': 'text/html' });
+      self.res.end(html);
+    }));
 });
 
 server.listen(port);
@@ -1292,7 +1292,7 @@ console.log('app running on http://127.0.0.1:' + port);
 * helper function for pulling in a handlebars template
 */
 function getView(file){
-	return Handlebars.compile(fs.readFileSync('./views/' + file + '.html').toString());
+  return Handlebars.compile(fs.readFileSync('./views/' + file + '.html').toString());
 }
 
 ```
@@ -1316,8 +1316,8 @@ var hbsLayouts = require('handlebars-layouts')(Handlebars);
 
 ```
 var wiki = {
-	name: 'Seattle LocalWiki',
-	url: 'http://localwiki.net/seattle',
+  name: 'Seattle LocalWiki',
+  url: 'http://localwiki.net/seattle',
   api: 'http://localwiki.net/api/v4/'
 };
 ```
@@ -1352,15 +1352,15 @@ var staticFiles = st({ path: __dirname + '/static', url: '/static', passthrough:
 ```
 var server = http.createServer(function(req, res){
 
-	/*
-	* if the request is for a static file, handle it here
-	*/
-	if (staticFiles(req, res)) return;
+  /*
+  * if the request is for a static file, handle it here
+  */
+  if (staticFiles(req, res)) return;
 
-	/*
-	* otherwise, let the router handle the request
-	*/
-	router.dispatch(req, res, function(err){
+  /*
+  * otherwise, let the router handle the request
+  */
+  router.dispatch(req, res, function(err){
     if (err) {
       res.writeHead(404);
       res.end();
@@ -1385,8 +1385,8 @@ router.get('/', function(){
 
 ```
 router.get('/:id', function(id){
-	var self = this;
-	var pagesRequest = request(wiki.api + '/pages/?region__slug=seattle&tags=' + id + '&format=json');
+  var self = this;
+  var pagesRequest = request(wiki.api + '/pages/?region__slug=seattle&tags=' + id + '&format=json');
 ```
 
 We use `id` as a parameter that's used in the requests we send to the wiki API.
@@ -1394,18 +1394,18 @@ We use `id` as a parameter that's used in the requests we send to the wiki API.
 ** Request the pages from the API, use the `template.page()` function to build the HTML that's sent to the browser:**
 
 ```
-	pagesRequest
-		.pipe(wait(function(err, data){
+  pagesRequest
+    .pipe(wait(function(err, data){
 
-			var html = templates.page({
-				wiki: wiki,
-				tag: id,
-				pages: JSON.parse(data).results
-			});
+      var html = templates.page({
+        wiki: wiki,
+        tag: id,
+        pages: JSON.parse(data).results
+      });
 
-		  self.res.writeHead(200, { 'Content-Type': 'text/html' });
-			self.res.end(html);
-		}));
+      self.res.writeHead(200, { 'Content-Type': 'text/html' });
+      self.res.end(html);
+    }));
 });
 ```
 
@@ -1447,13 +1447,13 @@ The views for this project are very similar to the examples we used above when d
 <body>
 
 <header>
-	<div class="container">
-		<h1><a href="/">Pages on {{ wiki.name }}</a></h1>
-	</div>
+  <div class="container">
+    <h1><a href="/">Pages on {{ wiki.name }}</a></h1>
+  </div>
 </header>
 
 <main id="main-content" role="main">
-	{{#block "body"}}{{/block}}
+  {{#block "body"}}{{/block}}
 </main>
 
 </body>
@@ -1469,11 +1469,11 @@ The views for this project are very similar to the examples we used above when d
 <div class="container">
   <p>Check out some of the pages on the {{ wiki.name }}!</p>
   <div id="tags">
-  	<h2>Here are some examples:</h2>
+    <h2>Here are some examples:</h2>
     <ul>
-	    <li><a href="/wallingford">Wallingford</a></li>
-	    <li><a href="/pizza">Pizza</a></li>
-	    <li><a href="/pioneersquare">Pioneer Square</a></li>
+      <li><a href="/wallingford">Wallingford</a></li>
+      <li><a href="/pizza">Pizza</a></li>
+      <li><a href="/pioneersquare">Pioneer Square</a></li>
     </ul>
   </div>
 </div>
@@ -1869,6 +1869,9 @@ Learn more at [learnjs.io](http://learnjs.io).
 
 # Changelog
 
+## v0.2.1 - September 7, 2014
+- Fix hyperquest chapter to use latest localwiki.net api, and other small fixes
+
 ## v0.2.0 – March 4, 2014
 - Add chapter 4: Preloading and rendering image sprites in 2d js/canvas games
 
@@ -1877,5 +1880,6 @@ Learn more at [learnjs.io](http://learnjs.io).
 - Add chapter 1: creating js library builds with browserify, watchify, and uglify-js
 - Add chapter 2: rework-npm, myth, & clean-css
 - Add chapter 3: hyperquest, director, handlebars, and more
+
 
 
